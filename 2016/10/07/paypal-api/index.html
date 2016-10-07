@@ -10,6 +10,22 @@
 
     <!--Description-->
     
+        <meta name="description" content="這裡記錄一下 paypal 的 API, 讓以後需要用到的時候可以查到。paypal 有3種比較常用的api 方法 
+
+REST Api
+NVP Api
+HTML
+
+
+REST :這裡先說流程
+代碼最重要:
+先取得token
+public function gettoken()
+{
+
+
+    $c">
+    
 
     <!--Author-->
     
@@ -18,7 +34,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hexo"/>
+        <meta property="og:title" content="paypal API"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +45,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +56,7 @@
 
     <!-- Title -->
     
-    <title>Archiv: 2016 - Hexo</title>
+    <title>paypal API - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -123,63 +139,98 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2016</h1>
+                <div class="post-heading">
+                    <h1>paypal API</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-10-07
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/10/07/paypal-api/">
-        <h1 class="post-title archive">
-            paypal API
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-07
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/10/07/hello-world/">
-        <h1 class="post-title archive">
-            Hello World
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-07
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="這裡記錄一下-paypal-的-API-讓以後需要用到的時候可以查到。"><a href="#這裡記錄一下-paypal-的-API-讓以後需要用到的時候可以查到。" class="headerlink" title="這裡記錄一下 paypal 的 API, 讓以後需要用到的時候可以查到。"></a>這裡記錄一下 paypal 的 API, 讓以後需要用到的時候可以查到。</h2><p>paypal 有3種比較常用的api 方法 </p>
+<ul>
+<li><strong>REST Api</strong></li>
+<li><strong>NVP Api</strong></li>
+<li><strong>HTML</strong></li>
 </ul>
+<hr>
+<h3 id="REST"><a href="#REST" class="headerlink" title="REST :"></a>REST :</h3><p>這裡先說流程</p>
+<p>代碼最重要:</p>
+<p><em>先取得token</em></p>
+<pre><code>public function gettoken()
+{
+
+
+    $ch = curl_init();
+    $clientId = &quot;your client id&quot;;
+    $secret = &quot;your secret&quot;;
+
+    curl_setopt($ch, CURLOPT_URL, &quot;https://api.sandbox.paypal.com/v1/oauth2/token&quot;);
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,0);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,0);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+    curl_setopt($ch, CURLOPT_USERPWD, $clientId.&quot;:&quot;.$secret);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, &quot;grant_type=client_credentials&quot;);
+    curl_setopt($ch, CURLOPT_SSLVERSION, 6);
+
+    $result = curl_exec($ch);
+
+    if(empty($result))die(curl_error($ch));
+    else
+    {
+        $json = json_decode($result);
+
+        $return  =  $json-&gt;access_token;
+    }
+
+    curl_close($ch);
+    return $return;
+
+}
+</code></pre>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
