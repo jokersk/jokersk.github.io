@@ -10,6 +10,12 @@
 
     <!--Description-->
     
+        <meta name="description" content="phpExcel 下載地址https://phpexcel.codeplex.com/
+直接先上代碼
+$objPHPExcel = new PHPExcel();
+$objPHPExcel-&amp;gt;setActiveSheetIndex(0);
+$objPHPExcel-&amp;gt;getActiveS">
+    
 
     <!--Author-->
     
@@ -18,7 +24,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="夜半發燒blog"/>
+        <meta property="og:title" content="phpExcel"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +35,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +46,7 @@
 
     <!-- Title -->
     
-    <title>Archiv: 2016 - 夜半發燒blog</title>
+    <title>phpExcel - 夜半發燒blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -123,89 +129,102 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('https://raw.githubusercontent.com/jokersk/jokersk.github.io/master/images/IMG_3336.JPG')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2016</h1>
+                <div class="post-heading">
+                    <h1>phpExcel</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-11-10
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/11/10/phpexcel/">
-        <h1 class="post-title archive">
-            phpExcel
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-11-10
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>phpExcel 下載地址<br><a href="https://phpexcel.codeplex.com/" target="_blank" rel="external">https://phpexcel.codeplex.com/</a></p>
+<p>直接先上代碼</p>
+<pre><code>$objPHPExcel = new PHPExcel();
+$objPHPExcel-&gt;setActiveSheetIndex(0);
+$objPHPExcel-&gt;getActiveSheet()-&gt;setTitle(&apos;&apos;);
+
+//這裡取到資料
+$records = $this-&gt;db-&gt;get(&quot;&quot;)-&gt;result();
+
+//這裡是excel 的首行的資料
+$header_arr = array();
+
+//把首行放進excel
+$col = 0;
+foreach ($header_arr as $key =&gt; $value) {
+$objPHPExcel-&gt;getActiveSheet()-&gt;setCellValueByColumnAndRow($col++, 1, $value);
+}
+
+//把資料放進excel 這裡用的方法是 setCellValueByColumnAndRow(col , row , value)
+foreach($records as $row=&gt;$record) {
+    $col = 0;
+    foreach($record as $key=&gt;$value) {
+        $objPHPExcel-&gt;getActiveSheet()-&gt;setCellValueByColumnAndRow($col++, $row+2, $value);
+    }
+}
+
+// 這裡的代碼是固定的，用來自動調整格子的大小
+foreach(range(&apos;A&apos;,&apos;Z&apos;) as $columnID) {
+   $objPHPExcel-&gt;getActiveSheet()-&gt;getColumnDimension($columnID)-&gt;setAutoSize(true);
+   foreach(range(&apos;A&apos;,&apos;Z&apos;) as $columnID2) {
+       $objPHPExcel-&gt;getActiveSheet()-&gt;getColumnDimension($columnID.$columnID2)-&gt;setAutoSize(true);
+   }
+}
+
+//選擇excel的格式
+//$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, &apos;Excel5&apos;);
+$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, &apos;Excel2007&apos;);
+
+//這裡就是excel 名 ，結尾可以用 xlsx 或者 xls 
+$filename = date(&quot;Y-m-d&quot;).&quot;somename.xlsx&quot;;
+
+header(&apos;Content-Type: application/vnd.ms-excel&apos;);
+
+header(&apos;Content-Disposition: attachment;filename=&apos;.$filename);
+header(&apos;Cache-Control: max-age=0&apos;);
+$objWriter-&gt;save(&apos;php://output&apos;);
+</code></pre>
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2016/11/04/phaser/">
-        <h1 class="post-title archive">
-            phaser
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-11-04
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2016/10/24/UnityMoveAndTurn/">
-        <h1 class="post-title archive">
-            Unity Move and Turn
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-24
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/10/20/ingapi/">
-        <h1 class="post-title archive">
-            Instagram api 教學
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-20
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
