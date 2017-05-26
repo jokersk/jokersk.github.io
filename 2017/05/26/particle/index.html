@@ -10,6 +10,12 @@
 
     <!--Description-->
     
+        <meta name="description" content="如何將粒子做到波浪形運動？首先粒子運動有兩個方向，X軸方向，同Y軸方向。X軸方向只需要簡單的遞增 例如：
+x+=0.1
+Y軸我們希望他圍繞坐標軸X做上下的週期性運動，有兩個方法
+方法1y = Math.sin(tick * Math.PI / 180)
+這裡tick * Math.PI / 180是">
+    
 
     <!--Author-->
     
@@ -18,7 +24,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="夜半發燒blog"/>
+        <meta property="og:title" content="particle"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +35,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +46,7 @@
 
     <!-- Title -->
     
-    <title>夜半發燒blog</title>
+    <title>particle - 夜半發燒blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -111,171 +117,74 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('https://raw.githubusercontent.com/jokersk/jokersk.github.io/master/images/IMG_3336.JPG')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>夜半發燒blog</h1>
-                    <hr class="small">
-                    <span class="subheading"></span>
+                <div class="post-heading">
+                    <h1>particle</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-05-26
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2017/05/26/particle/">
-        <h2 class="post-title">
-            particle
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-05-26
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/01/24/php-auth/">
-        <h2 class="post-title">
-            php Auth
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-01-24
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/12/01/ssh/">
-        <h2 class="post-title">
-            關於ssh的一點東西
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-12-01
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/11/15/water/">
-        <h2 class="post-title">
-            water
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-11-15
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/11/15/curl/">
-        <h2 class="post-title">
-            curl PHP
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-11-15
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/11/10/phpexcel/">
-        <h2 class="post-title">
-            phpExcel
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-11-10
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/11/04/phaser/">
-        <h2 class="post-title">
-            phaser
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-11-04
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/10/24/UnityMoveAndTurn/">
-        <h2 class="post-title">
-            Unity Move and Turn
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-10-24
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/10/20/ingapi/">
-        <h2 class="post-title">
-            Instagram api 教學
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-10-20
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
 
-            <ul class="pager">
-    
-    
-</ul>
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="如何將粒子做到波浪形運動？"><a href="#如何將粒子做到波浪形運動？" class="headerlink" title="如何將粒子做到波浪形運動？"></a>如何將粒子做到波浪形運動？</h3><p>首先粒子運動有兩個方向，X軸方向，同Y軸方向。<br>X軸方向只需要簡單的遞增 例如：</p>
+<pre><code>x+=0.1
+</code></pre><p>Y軸我們希望他圍繞坐標軸X做上下的週期性運動，有兩個方法</p>
+<h5 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h5><pre><code>y = Math.sin(tick * Math.PI / 180)
+</code></pre><p><em>這裡tick * Math.PI / 180是因為javascript裡面sin用弧度做單位，要轉換成角度</em></p>
+<p>如果tick遞增 tick++ ， 那麼Y就會呈現由 1 到 -1 得週期性變化<br>我們再在後面乘以一個數就可以改變波幅</p>
+<pre><code>y = Math.sin(tick * Math.PI / 180) * 100 
+</code></pre><p>以上系數學的方法，下面介紹更接近實際的類似物理上的方法</p>
+<h5 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h5><p>我們在終點施加一個力，離終點越遠，力就越大。那麼就算粒子到達終點也不會立即停下來，它還會根據慣性跑過終點，<br>這時候，終點又會有一個力將粒子拉回來。<br>看文字表述有點複雜，直接看代碼會更簡單</p>
+<pre><code>y += (destY - y) / 100
+//destY 是終點位置
+</code></pre><p>上述兩個方法都可以讓粒子繞X軸做週期性動作。不過個人認為方法2比較好，原因稍後會知道。</p>
+<p>現在粒子就會呈波浪形運動,效果<a href="https://codepen.io/jokersk/pen/EmJNEE?editors=1011" target="_blank" rel="external">看這裡</a></p>
+<p>大家應該看到一小堆粒子在做上下的波浪形運動，不過全部粒子都統一方向統一波幅顯得很刻板。</p>
+<h3 id="如何讓粒子生動些？"><a href="#如何讓粒子生動些？" class="headerlink" title="如何讓粒子生動些？"></a>如何讓粒子生動些？</h3><p>首先，我們要給每一粒粒子都加一個不同的延遲 delay ， 這樣粒子就不會一堆一堆移動。<br>我們給每個粒子加上唔同delay，如果tick 大過它的delay 才開始行動</p>
+<p>這裡的例子系用方法2 <a href="https://codepen.io/jokersk/pen/ybrMvB?editors=1011" target="_blank" rel="external">點這裡</a> </p>
+<h3 id="如何讓粒子更生動些？"><a href="#如何讓粒子更生動些？" class="headerlink" title="如何讓粒子更生動些？"></a>如何讓粒子更生動些？</h3><p>其實，現在的粒子運動得已經很生動，不過都系太有規律，我們想粒子規律得來又唔太規律，可以點做？<br>秘密就係每個粒子之間如果加上一個互相的拉力，那麼粒子的運動就更加正。<br><a href="https://codepen.io/jokersk/pen/jmRBoO?editors=1010" target="_blank" rel="external">這裡</a>是最終形態，調整了一些數據和加多了粒子 </p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
